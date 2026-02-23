@@ -16,18 +16,18 @@ Since this repository is intended for all KEH repositories, it needs some additi
 2. **Update CODEOWNERS**: Modify the CODEOWNERS file to chose the appropriate team. The 2 options for KEH are within the file itself.
 3. **Set up GitHub Actions**: This repository has already setup some sample GitHub Actions workflows (i.e. MkDocs related actions and Megalinter). In addition to this, the repository should also have its primary language linter and test workflow set up. Placeholders for these workflows are already in place, so you just need to fill in the details ([ci-fmt](./.github/workflows/ci-fmt.yml), [ci-test](./.github/workflows/ci-test.yml)).
 4. **Setup Repository Settings**: The repository should have the following settings configured:
-    1. **Contributors**:
-       1. Add `keh-dev` to the repository with **Write** access.
-       2. Add `keh-dev-admin` to the repository with **Admin** access.
-    2. **Branch Protection Rules**:
-       1. Within `Rules > Rulesets`, create a new *branch ruleset* for the `main` branch.
-       2. Add the following rules to the ruleset:
-          1. Add `keh-dev-admin` to the Bypass List. This is for emergency situations where you need to bypass branch protection rules.
-          2. Target the Default Branch (`main`).
-          3. Restrict deletions.
-          4. Require a pull request before merging. This should require **at least 2 approving reviews**.
-          5. Block force pushes.
-       3. Save the ruleset.
+   1. **Contributors**:
+      1. Add `keh-dev` to the repository with **Write** access.
+      2. Add `keh-dev-admin` to the repository with **Admin** access.
+   2. **Branch Protection Rules**:
+      1. Within `Rules > Rulesets`, create a new _branch ruleset_ for the `main` branch.
+      2. Add the following rules to the ruleset:
+         1. Add `keh-dev-admin` to the Bypass List. This is for emergency situations where you need to bypass branch protection rules.
+         2. Target the Default Branch (`main`).
+         3. Restrict deletions.
+         4. Require a pull request before merging. This should require **at least 2 approving reviews**.
+         5. Block force pushes.
+      3. Save the ruleset.
 5. **Setup Repository for Project Use**: Now that the housekeeping is done, you can set up the repository for project use.
 
 #### Python Specific Setup
@@ -43,6 +43,8 @@ The below is a template for the README file that should be used for all KEH repo
 Everything above this line should be removed when customising the README for your project.
 
 ---
+
+<!-- markdownlint-disable-line MD025 -->
 
 # Project Name
 
@@ -80,7 +82,7 @@ This repository uses [MkDocs](https://www.mkdocs.org/) for documentation. The do
 ### GitHub Actions for Documentation
 
 MkDocs gets deployed to GitHub Pages using GitHub Actions. The workflow for this is located at `.github/workflows/deploy-docs.yml`.
-Before deployment, another GitHub Action workflow runs to check that the documentation builds correctly and has no linting or formatting issues. 
+Before deployment, another GitHub Action workflow runs to check that the documentation builds correctly and has no linting or formatting issues.
 This workflow is located at `.github/workflows/ci-docs.yml`.
 
 ### Local Development of Documentation
@@ -89,14 +91,15 @@ To run the documentation locally:
 
 1. Install the dependencies for MkDocs.
 
-    ```bash
-    poetry install --only docs
-    ```
+   ```bash
+   poetry install --only docs
+   ```
+
 2. Run the MkDocs development server.
 
-    ```bash
-    poetry run mkdocs serve
-    ```
+   ```bash
+   poetry run mkdocs serve
+   ```
 
 ## Linting and Testing
 
@@ -118,7 +121,7 @@ This repository has GitHub Actions workflows set up for linting and testing. The
 
 #### MegaLinter
 
-This repository uses MegaLinter for comprehensive linting across multiple languages and file types. 
+This repository uses MegaLinter for comprehensive linting across multiple languages and file types.
 We use this so that all additional assets in the repository (e.g. YAML files, Markdown files, etc.) are also linted and checked for formatting issues, without having to set up specific linters for each file type.
 
 To run MegaLinter locally, you can use the following command:
@@ -136,21 +139,21 @@ This repository uses Markdownlint for linting the documentation. To run Markdown
 
 1. Install the dependencies for Markdownlint.
 
-    ```bash
-    npm install -g markdownlint-cli
-    ```
+   ```bash
+   npm install -g markdownlint-cli
+   ```
 
 2. Run Markdownlint.
 
-    ```bash
-    markdownlint .
-    ```
+   ```bash
+   markdownlint .
+   ```
 
-    *(Optional) Add the `--fix` flag to automatically fix any linting issues that can be fixed.*
+   _(Optional) Add the `--fix` flag to automatically fix any linting issues that can be fixed._
 
-    ```bash
-    markdownlint . --fix
-    ```
+   ```bash
+   markdownlint . --fix
+   ```
 
 To test that the documentation builds correctly, you can use the following command:
 
