@@ -30,6 +30,12 @@ Since this repository is intended for all KEH repositories, it needs some additi
        3. Save the ruleset.
 5. **Setup Repository for Project Use**: Now that the housekeeping is done, you can set up the repository for project use.
 
+#### Python Specific Setup
+
+When using Python, Poetry has already been setup for dependency management since it is used for documentation.
+
+Ensure that you update the `pyproject.toml` file to match the needs of your project.
+
 ## README Template
 
 The below is a template for the README file that should be used for all KEH repositories. This template provides a basic structure and can be customised to fit the specific needs of your project.
@@ -37,6 +43,7 @@ The below is a template for the README file that should be used for all KEH repo
 Everything above this line should be removed when customising the README for your project.
 
 ---
+
 # Project Name
 
 <!-- A brief description of the project goes here. -->
