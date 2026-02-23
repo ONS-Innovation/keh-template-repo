@@ -11,7 +11,7 @@ theme:
   language: en
   palette:
     # toggle for light mode
-    - media: '(prefers-color-scheme: light)'
+    - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: white
       accent: deep purple
@@ -20,7 +20,7 @@ theme:
         name: Switch to dark mode
 
     # toggle for dark mode
-    - media: '(prefers-color-scheme: dark)'
+    - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: white
       accent: deep purple
