@@ -44,9 +44,7 @@ Everything above this line should be removed when customising the README for you
 
 ---
 
-<!-- markdownlint-disable-line MD025 -->
-
-# Project Name
+# Project Name <!-- markdownlint-disable-line MD025 -->
 
 <!-- A brief description of the project goes here. -->
 
