@@ -3,7 +3,7 @@ name = "keh-template-repo"
 version = "1.0.0"
 description = "Sample Description"
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "ONSdigital/keh-dev"}
 ]
 license = {text = "MIT"}
 readme = "README.md"
