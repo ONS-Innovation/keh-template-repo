@@ -57,6 +57,15 @@ Everything above this line should be removed when customising the README for you
 
 <!-- A list of prerequisites for the project goes here. -->
 
+## Makefile
+
+This project uses a Makefile to simplify common tasks.
+To see the available commands, run:
+
+```bash
+make all
+```
+
 ## Running the Project
 
 <!-- Instructions for running the project go here. This can include commands to start the project, as well as any necessary configuration steps. -->
