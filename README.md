@@ -96,16 +96,23 @@ This workflow is located at `.github/workflows/ci-docs.yml`.
 
 To run the documentation locally:
 
-1. Install the dependencies for MkDocs.
+1. Create a Python virtual environment and activate it.
 
    ```bash
-   poetry install --only docs
+   python -m venv venv
+   source venv/bin/activate
    ```
 
-2. Run the MkDocs development server.
+2. Install the dependencies for MkDocs.
 
    ```bash
-   poetry run mkdocs serve
+   make docs-install
+   ```
+
+3. Run the MkDocs development server.
+
+   ```bash
+   make docs-serve
    ```
 
 ## Linting and Testing
@@ -134,38 +141,29 @@ We use this so that all additional assets in the repository (e.g. YAML files, Ma
 To run MegaLinter locally, you can use the following command:
 
 ```bash
-docker run --platform linux/amd64 --rm \
-    -v /var/run/docker.sock:/var/run/docker.sock:rw \
-    -v $(shell pwd):/tmp/lint:rw \
-    oxsecurity/megalinter:v8
+make megalinter
 ```
 
 #### Documentation linting and building
 
 This repository uses Markdownlint for linting the documentation. To run Markdownlint locally, you can use the following:
 
-1. Install the dependencies for Markdownlint.
+```bash
+make docs-lint
+```
 
-   ```bash
-   npm install -g markdownlint-cli
-   ```
+**Note:** This will install `markdownlint-cli` globally via npm if it is not already installed.
 
-2. Run Markdownlint.
+To apply automatic fixes for any linting issues found by Markdownlint, you can use:
 
-   ```bash
-   markdownlint .
-   ```
-
-   _(Optional) Add the `--fix` flag to automatically fix any linting issues that can be fixed._
-
-   ```bash
-   markdownlint . --fix
-   ```
+```bash
+make docs-fix
+```
 
 To test that the documentation builds correctly, you can use the following command:
 
 ```bash
-poetry run mkdocs build
+make docs-build
 ```
 
 **Note:** This depends on MkDocs being set up for the repository. Instructions for setting up MkDocs can be found in the [Documentation](#documentation) section of this README.
