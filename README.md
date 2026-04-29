@@ -63,7 +63,7 @@ This project uses a Makefile to simplify common tasks.
 To see the available commands, run:
 
 ```bash
-make all
+make help
 ```
 
 ## Running the Project
