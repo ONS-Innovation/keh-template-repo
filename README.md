@@ -14,7 +14,7 @@ Since this repository is intended for all KEH repositories, it needs some additi
 
 1. **Update the README**: Replace the content of the README with information relevant to your project. This should use the template below as a starting point.
 2. **Update CODEOWNERS**: Modify the CODEOWNERS file to chose the appropriate team. The 2 options for KEH are within the file itself.
-3. **Set up GitHub Actions**: This repository has already setup some sample GitHub Actions workflows (i.e. MkDocs related actions and Megalinter). In addition to this, the repository should also have its primary language linter and test workflow set up. Placeholders for these workflows are already in place, so you just need to fill in the details ([ci-fmt](./.github/workflows/ci-fmt.yml), [ci-test](./.github/workflows/ci-test.yml)).
+3. **Set up GitHub Actions**: This repository has already setup some sample GitHub Actions workflows (i.e. MkDocs related actions and Megalinter). In addition to this, the repository should also have its primary language linter and test workflow set up. Placeholders for these workflows are already in place, so you just need to fill in the details ([ci-fmt](./.github/workflows/ci-fmt.yml), [ci-test](./.github/workflows/ci-test.yml)). The actions use paths to only run when files in certain directories are changed (e.g. `src` and `tests`), so make sure to update these paths if your repository has a different structure.
 4. **Setup Repository Settings**: The repository should have the following settings configured:
    1. **Contributors**:
       1. Add `keh-dev` to the repository with **Write** access.
